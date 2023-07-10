@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <style>
+        #app {
+            text-align: center;
+            background-color: skyblue;
+            border-width: 2px;
+            border-style: solid;
+            border-color: cornflowerblue;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <input id="in" type="text" placeholder="(请输入的验证码)" maxlength="10">
+    <span id="IdCode"></span><br>
+    <span><a id="reCode" href="#">看不清?</a></span><br>
+    <div id="errMsg" style="display: none">验证码错误</div>
+    <button id="btn">提交</button>
+</div>
+</body>
+</html>
+
+<script>
+    const maxCodeLen = 5;
+    const CodeRange = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var code="";
+    //loadCode方法：生成随机5位数的验证码
+    function loadCode() {
+        code = "";
+        for (var index = 0; index < maxCodeLen; index++) {
+            code += CodeRange[Math.floor(Math.random() * CodeRange.length)];
+        }
+    }
+
+
+    //一面加载完成后就调用loadCode方法，并且给验证码的span区域赋值
+    window.onload=function () {
+        loadCode();
+        document.getElementById("IdCode").innerText=code;
+    }
+
+
+
+
+
+    document.getElementById("reCode").onclick=function (ev) {
+        var e = ev || window.event;
+        e.preventDefault();
+        window.loadCode();
+        document.getElementById("IdCode").innerText=code;
+    }
+
+    document.getElementById("btn").onclick=function (ev) {
+        if(document.getElementById("in").value===code){
+            alert("验证成功");
+            location.reload();
+        }else{
+            document.getElementById("errMsg").style.display="";
+        }
+    }
+</script>

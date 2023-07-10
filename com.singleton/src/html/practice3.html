@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      span{
+        color: gray;
+        border:3px black solid;
+
+      }
+    </style>
+</head>
+<body>
+<div id="dv">
+  <span>红色</span>
+  <span>绿色</span>
+  <span>蓝色</span>
+  <span>黄色</span>
+</div>
+<div id="msg">只是一段文字</div>
+</body>
+</html>
+<script>
+  var msg = document.getElementById("msg");
+  var nodes = document.getElementsByTagName("span");
+  for (const node of nodes) {
+    node.onclick=function (e) {
+
+      for (const node of nodes) {
+        node.style.backgroundColor="white";
+      }
+
+      e.target.style.backgroundColor="black";
+
+
+      if(node.innerText==="红色"){
+        msg.style.color="red"
+      }else if(node.innerText==="绿色"){
+        msg.style.color="green"
+      }else if(node.innerText==="蓝色"){
+        msg.style.color="blue"
+      }else  if(node.innerText==="黄色"){
+        msg.style.color="yellow"
+      }
+    }
+  }
+
+
+
+</script>

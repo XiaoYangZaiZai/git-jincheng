@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      border:5px blue solid;
+      padding:10px;
+    }
+    #father{
+      background-color: yellow;
+
+    }
+    #son{
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="father">
+    父亲
+    <div id="son">
+      儿子
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  var father = document.getElementById("father");
+  var son = document.getElementById("son");
+
+  son.onmouseup=function (e) {
+    if(e.ctrlKey){
+      alert("你点击了ctrl"+"---------"+e.button)
+    }else{
+      alert("你没有点击了ctrl"+"---------"+e.button)
+    }
+    e.target.style.border="5px blue dashed";
+    e.stopPropagation();
+  }
+
+  father.onmouseup=function (e){
+    if(e.ctrlKey){
+      alert("你点击了ctrl"+"---------"+e.button)
+    }else{
+      alert("你没有点击了ctrl"+"---------"+e.button)
+    }
+    e.target.style.border="5px blue dashed";
+  }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>跟随鼠标移动的天使图片</title>
+    <style>
+        #angel {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="angel">
+    <img src="../img/angel.jpg" width="45">
+</div>
+</body>
+</html>
+
+<script>
+
+    // 获取#angel元素
+    var angel = document.getElementById("angel");
+
+    // 获取文档窗口的宽度和高度
+    var winWidth = window.innerWidth;
+    var winHeight = window.innerHeight;
+
+    // 添加mousemove事件监听器
+    document.addEventListener("mousemove", function(event) {
+        // 计算天使图像的新位置
+        var xPos = event.clientX;
+        var yPos = event.clientY;
+
+        // 限制天使图像在文档范围内移动
+        xPos = Math.min(xPos, winWidth - angel.offsetWidth);
+        yPos = Math.min(yPos, winHeight - angel.offsetHeight);
+        xPos = Math.max(xPos, 0);
+        yPos = Math.max(yPos, 0);
+
+        // 使用CSS transform属性将天使图像移动到新位置
+        angel.style.transform = "translate(" + xPos + "px, " + yPos + "px)";
+
+    },true);
+
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="计算" onclick="func()"/>
+</body>
+</html>
+
+<script>
+    function func() {
+        if (window.confirm("你是否接受我们的协议？")) {
+            let a = parseInt(prompt("请输入被加数"));
+            let b = parseInt(prompt("请输入加数"));
+            alert("和为" + (a + b));
+        } else {
+            alert("您没有接受我们的协议，不能提供计算功能")
+        }
+    }
+</script>

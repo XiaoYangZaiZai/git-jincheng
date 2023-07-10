@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="time"></div>
+</body>
+</html>
+
+<script>
+    var time = 3;
+    var div = document.getElementById("time");
+    var timeout=window.setInterval(function () {
+        if (time >= 0) {
+            div.innerHTML = "倒计时" + time + "秒";
+            time--;
+        }
+        else{
+            alert("时间到！");
+            clearInterval(timeout);
+        }
+    }, 1000)
+</script>
