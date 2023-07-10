@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input-box">
+</body>
+</html>
+
+<script>
+      const inputBox = document.getElementById('input-box');
+      let isComposing = false;
+
+      inputBox.addEventListener('compositionstart', () => {
+      isComposing = true;
+    });
+
+      inputBox.addEventListener('compositionupdate', () => {
+      isComposing = true;
+    });
+
+      inputBox.addEventListener('compositionend', () => {
+      isComposing = false;
+    });
+
+      inputBox.addEventListener('input', event => {
+      if (!isComposing) {
+      console.log('输入结束：', event.target.value);
+    } else {
+      console.log('正在输入：', event.target.value);
+    }
+    });
+</script>

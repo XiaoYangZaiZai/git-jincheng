@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    姓名：<input name="theName" type="text" value=""/><br/>
+    性别：<input type="radio" value="0" name="sex" checked="checeked"/>男
+    <input type="radio" value="1" name="sex"/>女<br/>
+    体型：
+    <select name="selectTixing">
+        <option value="big">偏胖</option>
+        <option value="normal" selected="selected">正常</option>
+        <option value="small">偏瘦</option>
+        <select>
+            <br/>
+            颜色（可以多选）：
+            <select name="selectColor" size="3" multiple="multiple">
+                <option value="red">红色</option>
+                <option value="blue">蓝色</option>
+                <option value="green">绿色</option>
+                <select>
+                    <br/>
+
+                    爱好： <input type="checkbox" name="love" value="0"/>听音乐
+                    <input type="checkbox" name="love" value="1" checked="checked"/>运动
+                    <input type="checkbox" name="love" value="2"/>游戏
+                    <br/>
+                    <hr/>
+                    <input id="mybtn1" type="button" value="提交"/>
+                    <p id="result"></p>
+</form>
+</body>
+</html>
+
+
+<script>
+    var theName = document.getElementsByName("theName");
+    var sex = document.getElementsByName("sex");
+    var selectTixing = document.getElementsByName("selectTixing");
+    var selectColor = document.getElementsByName("selectColor");
+    var love = document.getElementsByName("love");
+
+    document.getElementById("mybtn1").onclick=function () {
+        let checked;
+        for(let i = 0;i<sex.length;i++){
+            if(sex[0].checked){
+                checked="男";
+            }else
+            {
+                checked="女";
+            }
+        }
+        let selectTixing;
+        for(let i=0;i<selectTixing.length;i++){
+            if(sex[i].checked){}
+        }
+        document.getElementById("result").innerText+=theName[0].value;
+        document.getElementById("result").innerText+=checked;
+        document.getElementById("result").innerText+=
+    }
+
+</script>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="1">第一个段落</div>
+    <div id="2">第二个段落</div>
+    <div id="3">第三个段落</div>
+
+<input type="button" value="修改DOM结构" id="btn"/>
+</body>
+</html>
+
+<script>
+
+    document.getElementById("btn").onclick=function () {
+        var node = document.getElementById("2");
+        // myH1=document.createElement("h1");
+        // myText=document.createTextNode("新增的文本内容2");
+        // myH1.appendChild(myText);
+        // node.appendChild(myH1);
+        node.innerHTML="<h1>新增的文本内容2</h1>"
+    }
+</script>

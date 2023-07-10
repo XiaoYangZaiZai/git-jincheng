@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>背后的民间杂技人</h3>
+<div style="display: none">4月14日xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+</body>
+</html>
+
+<script>
+  var h3El = document.querySelector("h3");
+  var divEl = document.querySelector("div");
+  h3El.onmouseover=function (ev) {
+    console.log(ev.screenX+","+ev.screenY);
+    divEl.style.display="";
+  }
+  h3El.onmouseout=function (){
+    divEl.style.display="none"
+  }
+</script>

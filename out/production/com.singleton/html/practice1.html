@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <button id="btn">改变段落</button>
+  <h1 id="headline">段落原始文本内容</h1>
+<img id="image" src="https://img0.baidu.com/it/u=4162443464,2854908495&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" width="500">
+</body>
+</html>
+<script>
+  var btnEl = document.getElementById("btn");
+  btnEl.onclick=function () {
+    document.getElementById("headline").style.backgroundColor="yellow";
+    document.getElementById("headline").innerText="段落修改后的文本内容";
+    document.getElementById("headline").style.color="red";
+  }
+
+  document.getElementById("image").ondblclick=function () {
+    document.getElementById("image").src="https://img0.baidu.com/it/u=3425868493,3104015061&fm=253&fmt=auto&app=120&f=JPEG?w=1199&h=800";
+  }
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: red;
+        }
+
+        #cat {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body id="cow">
+<div id="cat">
+    <input type="button" value="fly" id="fly"/>
+</div>
+</body>
+</html>
+
+<script>
+    var flyEL = document.getElementById("fly");
+    var catEL = document.getElementById("cat");
+    var cowEL = document;
+    flyEL.onclick=function () {
+        alert("苍蝇好疼");
+    }
+    catEL.onclick=function (ev) {
+        alert("猫好疼");
+        ev.stopPropagation();
+    }
+    cowEL.onclick=function () {
+        alert("牛好疼");
+    }
+</script>
